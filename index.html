@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ninety-Nine Bottles of Beer on the Wall</title>
+    <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Bubblegum Sans', cursive;
+        }
+
+        .container {
+            margin: auto;
+            max-width: 640px
+        }
+
+        .lyric-blur {
+            font-size: 24px;
+            color: transparent;
+            margin: 18px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ninety-Nine Bottles of Beer on the Wall</h1>
+        <h3>Straight JavaScript version | <a href="handlebars.html">Handlebars version</a></h3>
+
+        <div id="song">
+        </div>
+    </div>
+
+    <script src="ninetynine-dom.js"></script>
+    <script>
+        singNinetyNineBottles();
+    </script>
+</body>
+</html>

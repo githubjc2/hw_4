@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ninety-Nine Bottles of Beer on the Wall</title>
+    <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Bubblegum Sans', cursive;
+        }
+
+        .container {
+            margin: auto;
+            max-width: 640px
+        }
+
+        #song div {
+            font-size: 24px;
+            margin: 18px 0;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://builds.handlebarsjs.com.s3.amazonaws.com/handlebars-v4.0.5.js"></script>
+</head>
+<body>
+    <script id="header-template" type="text/x-handlebars-template">
+        <div class="container">
+            <h1>{{title}}</h1>
+            <h3><a href="index.html">Straight JavaScript version</a> | Handlebars version</h3>
+        </div>
+    </script>
+    <script id="song-template" type="text/x-handlebars-template">
+        <div class="container">
+            <div id="song">
+                {{#lyrics}}
+                <div>{{{lyricDivContent}}}</div>
+                {{/lyrics}}
+            </div>
+        </div>
+    </script>
+
+    <script>
+        var source = $("#header-template").html();
+        var template = Handlebars.compile(source);
+        var context = {title: "Ninety-Nine Bottles of Beer on the Wall"};
+        $('body').append(template(context));
+    </script>
+    <script src="ninetynine-hb.js"></script>
+    <script>
+        var source = $("#song-template").html();
+        var template = Handlebars.compile(source);
+
+        $('body').append(template(singNinetyNineBottles()));
+    </script>
+</body>
+</html>
